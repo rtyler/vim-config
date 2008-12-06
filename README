@@ -8,6 +8,9 @@
 Included in this directory is a set of scripts/configuration
 files some of us are using inside Slide, Inc (http://www.slide.com)
 
+To use the scripts just execute the following:
+	`mv dotvimrc ~/.vimrc && mv dotvim ~/.vim`
+
 The set up was originally created by John M. Anderson (sontek) and 
 slightly modified for some things like fancier autocompletion
 
