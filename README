@@ -1,0 +1,15 @@
+     _ _     _                   _           
+    | (_)   | |                 (_)          
+ ___| |_  __| | ___ ________   ___ _ __ ___  
+/ __| | |/ _` |/ _ \______\ \ / / | '_ ` _ \ 
+\__ \ | | (_| |  __/       \ V /| | | | | | |
+|___/_|_|\__,_|\___|        \_/ |_|_| |_| |_|
+
+Included in this directory is a set of scripts/configuration
+files some of us are using inside Slide, Inc (http://www.slide.com)
+
+The set up was originally created by John M. Anderson (sontek) and 
+slightly modified for some things like fancier autocompletion
+
+You can find sontek's original post and tarball here:
+	http://blog.sontek.net/2008/05/11/python-with-a-modular-ide-vim/
