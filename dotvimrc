@@ -198,7 +198,7 @@ iabbr _d  <C-R>=strftime("%a, %d %b %Y")<CR><C-R>=EatChar('\s')<CR>
 iabbr _dt <C-R>=strftime("%a, %d %b %Y %H:%M:%S %z")<CR><C-R>=EatChar('\s')<CR>
 endif
 
-let Tlist_Ctags_Cmd="/nail/home/" . $USER . "/bin/ctags"
+let Tlist_Ctags_Cmd="ctags"
 let Tlist_Compact_Format=1
 let Tlist_Show_Menu=1
 let Tlist_Auto_Highlight_Tag=1
