@@ -217,3 +217,5 @@ imap <C-@> <C-Space>
 
 set list
 set lcs=tab:.\ ,eol:.,nbsp:%
+
+au WinEnter,VimEnter * highlight rightMargin term=bold ctermfg=magenta guifg=magenta|match rightMargin /\%>100v./
