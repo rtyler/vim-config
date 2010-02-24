@@ -6,9 +6,6 @@
 " Instructions for GNOME Terminal:
 " http://uwstopia.nl/blog/2006/07/tango-terminal
 "
-" Simply drop this file into your ~/.vim/colors folder and add
-" 'colorscheme tango' inside your ~/.vimrc.
-"
 " author:   Michele Campeotto <micampe@micampe.it>
 "
 set background=dark
