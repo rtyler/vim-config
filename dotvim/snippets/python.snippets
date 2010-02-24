@@ -1,5 +1,5 @@
 snippet #!
-	#!/usr/bin/python
+	#!/usr/bin/env python
 
 # Module Docstring
 snippet docs
@@ -75,6 +75,9 @@ snippet try Try/Except/Else/Finally
 snippet ifmain
 	if __name__ == '__main__':
 		${1:main()}
+
+snippet sup
+	super(${1:Object}, self).${2:function}(${3:args})
 # __magic__
 snippet _
 	__${1:init}__${2}
