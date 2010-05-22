@@ -1,17 +1,10 @@
-     _ _     _                   _           
-    | (_)   | |                 (_)          
- ___| |_  __| | ___ ________   ___ _ __ ___  
-/ __| | |/ _` |/ _ \______\ \ / / | '_ ` _ \ 
-\__ \ | | (_| |  __/       \ V /| | | | | | |
-|___/_|_|\__,_|\___|        \_/ |_|_| |_| |_|
-
 Included in this directory is a set of scripts/configuration
-files some of us are using inside Slide, Inc (http://www.slide.com)
+files I use for normal development
 
 To use the scripts just execute the following:
 	`mv dotvimrc ~/.vimrc && mv dotvim ~/.vim`
 
-The set up was originally created by John M. Anderson (sontek) and 
+The set up was originally created by John M. Anderson (sontek) and
 slightly modified for some things like fancier autocompletion
 
 You can find sontek's original post and tarball here:
