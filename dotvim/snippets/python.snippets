@@ -71,10 +71,14 @@ snippet try Try/Except/Else/Finally
 		${5:pass}
 	finally:
 		${6:pass}
+
 # if __name__ == '__main__':
 snippet ifmain
 	if __name__ == '__main__':
-		${1:main()}
+		exit(main())
+
+snippet pdb
+	import pdb; pdb.set_trace()
 
 snippet sup
 	super(${1:Object}, self).${2:function}(${3:args})
