@@ -140,7 +140,7 @@ set noequalalways
 ":noremap ,h :split^M^W^W<cr>
 
 " Cursor highlights ***********************************************************
-set cursorline
+"set cursorline
 "set cursorcolumn
 
 " Searching *******************************************************************
@@ -168,10 +168,10 @@ if has("gui_running")
 else
 "    colorscheme tango
 "    colorscheme xoria256
-"    colorscheme oceanblack256
+    colorscheme oceanblack256
 "    colorscheme vividchalk
 "    colorscheme phd
-    colorscheme sorceror
+"    colorscheme sorceror
 "    colorscheme vydark
 endif
 
@@ -530,3 +530,8 @@ match RedundantWhitespace /\s\+$\| \+\ze\t/
 set lcs=tab:»»,trail:·,eol:·
 set list
 nmap <leader>rt :%s/\s\+$//<CR>
+
+hi IndentGuidesEven ctermbg=darkgrey
+hi IndentGuidesOdd  ctermbg=black
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size =1
