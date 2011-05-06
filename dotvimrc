@@ -168,8 +168,8 @@ if has("gui_running")
 else
 "    colorscheme tango
 "    colorscheme xoria256
-    colorscheme oceanblack256
-"    colorscheme vividchalk
+"    colorscheme oceanblack256
+    colorscheme vividchalk
 "    colorscheme phd
 "    colorscheme sorceror
 "    colorscheme vydark
