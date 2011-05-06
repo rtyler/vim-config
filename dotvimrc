@@ -242,6 +242,7 @@ au FileType c set formatoptions+=ro
 au FileType perl set smartindent
 
 au FileType python set formatoptions-=t
+au FileType ruby call Tabstyle_spaces()
 
 " for CSS, also have things in braces indented:
 au FileType css set smartindent
