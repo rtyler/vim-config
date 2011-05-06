@@ -479,7 +479,7 @@ imap <Leader>tt <Esc>:execute "normal i" . strftime("%x %X (%Z) ")<Esc>i
 " | Pluggins                                                                  |
 " -----------------------------------------------------------------------------
 "Taglist
-map \a :TlistToggle<CR>
+map \a :TagbarToggle<CR>
 " Jump to taglist window on open.
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_Close_OnSelect=1
@@ -535,3 +535,4 @@ hi IndentGuidesEven ctermbg=darkgrey
 hi IndentGuidesOdd  ctermbg=black
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size =1
+let g:tagbar_left = 1
