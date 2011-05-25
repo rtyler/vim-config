@@ -480,7 +480,8 @@ imap <Leader>tt <Esc>:execute "normal i" . strftime("%a %d %b %Y")<Esc>i
 " | Pluggins                                                                  |
 " -----------------------------------------------------------------------------
 "Taglist
-map \a :TagbarToggle<CR>
+map \a :TagbarOpen<CR>
+map \c :TagbarClose<CR>
 " Jump to taglist window on open.
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_Close_OnSelect=1
