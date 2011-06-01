@@ -481,7 +481,6 @@ imap <Leader>tt <Esc>:execute "normal i" . strftime("%a %d %b %Y")<Esc>i
 " -----------------------------------------------------------------------------
 "Taglist
 map \a :TagbarOpen<CR>
-map \c :TagbarClose<CR>
 " Jump to taglist window on open.
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_Close_OnSelect=1
@@ -500,7 +499,7 @@ let Tlist_WinWidth = 40
 let Tlist_Show_One_File = 1
 
 "NERDTree
-map <silent> \e :NERDTreeToggle<CR>
+map <silent> \e :NERDTree<CR>
 let NERDTreeWinPos='right'
 let NERDTreeChDirMode='2'
 let NERDTreeIgnore=['\.vim$', '\~$', '\.pyo$', '\.pyc$', '\.svn[\//]$', '\.swp$']
