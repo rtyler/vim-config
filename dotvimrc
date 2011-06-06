@@ -51,7 +51,7 @@ set number
 " Show matching brackets.
 set showmatch
 " have % bounce between angled brackets, as well as t'other kinds:
-set matchpairs+=<:>
+"set matchpairs+=<:>
 set comments=s1:/*,mb:*,ex:*/,f://,b:#,:%,:XCOMM,n:>,fb:-
 " This being the 21st century, I use Unicode
 set encoding=utf-8
