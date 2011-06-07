@@ -349,6 +349,7 @@ function! ToggleTabCompletion()
   endif
 endfunction
 map <Leader>tc :call ToggleTabCompletion()<CR>
+map <Leader>tq :tabclose<CR>
 
 " tell complete to look in the dictionary
 set complete-=k complete+=k
