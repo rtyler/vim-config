@@ -478,26 +478,12 @@ nmap <Leader>tt :execute "normal i" . strftime("%a %d %b %Y")<Esc>
 imap <Leader>tt <Esc>:execute "normal i" . strftime("%a %d %b %Y")<Esc>i
 
 " -----------------------------------------------------------------------------
-" | Pluggins                                                                  |
+" | Plugins                                                                  |
 " -----------------------------------------------------------------------------
 "Taglist
 map \a :TagbarOpen<CR>
-" Jump to taglist window on open.
-let Tlist_GainFocus_On_ToggleOpen = 1
-let Tlist_Close_OnSelect=1
-" if you are the last window, kill yourself
-let Tlist_Exist_OnlyWindow = 1
-" sort by order or name
-let Tlist_Sort_Type = "order"
-" do not show prototypes and not tags in the taglist window.
-let Tlist_Display_Prototype = 0
-" Remove extra information and blank lines from the taglist window.
-let Tlist_Compart_Format = 1
-" Show tag scope next to the tag name.
-let Tlist_Display_Tag_Scope = 1
-let Tlist_WinWidth = 40
-" Show only current file
-let Tlist_Show_One_File = 1
+let g:tagbar_left = 0
+
 
 "NERDTree
 map <silent> \e :NERDTree<CR>
