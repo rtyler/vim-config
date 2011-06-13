@@ -465,7 +465,7 @@ function! HandleURI()
   let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;]*')
   echo s:uri
   if s:uri != ""
-   exec "!open \"" . s:uri . "\""
+   exec "!chrome \"" . s:uri . "\""
   else
    echo "No URI found in line."
   endif
@@ -506,40 +506,28 @@ highlight RedundantWhitespace ctermbg=red guibg=red
 match RedundantWhitespace /\s\+$\| \+\ze\t/
 set lcs=tab:»»,trail:·,eol:·
 set list
-nmap <leader>rt :%s/\s\+$//<CR>
 
+" Find and remove all trailing whitespace
+nmap <leader>rt :%s/\s\+$//<CR>
+nmap <leader>q :qa<CR>
+
+" indent_guides plugin setup
 hi IndentGuidesEven ctermbg=darkgrey
 hi IndentGuidesOdd  ctermbg=black
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 let g:indent_guides_enable_on_vim_startup = 1
-let g:tagbar_left = 1
 
+
+" Some colors to make VimDiff a bit more readable
 highlight DiffAdd term=reverse cterm=bold ctermbg=green ctermfg=black
 highlight DiffChange term=reverse cterm=bold ctermbg=cyan ctermfg=black
 highlight DiffText term=reverse cterm=bold ctermbg=gray ctermfg=black
 highlight DiffDelete term=reverse cterm=bold ctermbg=red ctermfg=black
-nmap <leader>q :qa<CR>
+
 
 function! SetupEnv()
-    let window = bufwinnr(1)
-
-    try
-        call NERDTreeGetCurrentNode()
-    catch
-        " Only open NERDTree if it's not already open (we're relying on
-        " NERDTreeGetCurrentNode to throw an exception if a NERDTree doesn't
-        " already exist
-        NERDTree
-        " This is a stupid hack to get mirrored NERDTree's into new tabs and
-        " such *and* brand new vim windows
-        NERDTreeMirror
-    endtry
-
     TagbarOpen
-
-    execute 'wincmd w'
-
 endfunction
 
 if !&diff
