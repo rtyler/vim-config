@@ -506,19 +506,8 @@ let NERDTreeChDirMode='2'
 let NERDTreeIgnore=['\.vim$', '\~$', '\.pyo$', '\.pyc$', '\.svn[\//]$', '\.swp$']
 let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\.bak$', '\~$']
 
-"FuzzyFinder
-"Seriously FF, setting up your options sucks
-if !exists('g:FuzzyFinderOptions')
-    let g:FuzzyFinderOptions = { 'Base':{}, 'Buffer':{}, 'File':{}, 'Dir':{}, 'MruFile':{}, 'MruCmd':{}, 'Bookmark':{}, 'Tag':{}, 'TaggedFile':{}}
-    let g:FuzzyFinderOptions.File.excluded_path = '\v\~$|\.o$|\.exe$|\.bak$|\.swp$|((^|[/\\])\.{1,2}[/\\]$)|\.pyo$|\.pyc$|\.svn[/\\]$'
-    let g:FuzzyFinderOptions.Base.key_open_vsplit = '<Space>'
-endif
-let g:fuzzy_matching_limit = 60
-let g:fuzzy_ceiling = 50000
-let g:fuzzy_ignore = "*.log;*.pyc;*.svn;"
-map <silent> \f :FuzzyFinderTextMate<CR>
-map <silent> \F :FuzzyFinderTextMateRefreshFiles<CR>:FuzzyFinderTextMate<CR>
-map <silent> \b :FuzzyFinderBuffer!<CR>
+
+map <silent> \f :LustyFilesystemExplorer<CR>
 
 "newrw
 let g:netrw_hide              = 1
