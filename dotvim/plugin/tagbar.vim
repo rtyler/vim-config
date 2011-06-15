@@ -146,6 +146,37 @@ autocmd SessionLoadPost * nested call s:RestoreSession()
 function! s:InitTypes()
     let s:known_types = {}
 
+    " Ada {{{3
+    let type_ada = {}
+    let type_ada.ctagstype = 'ada'
+    let type_ada.kinds     = [
+        \ {'short' : 'd', 'long' : 'macros',      'fold' : 1},
+        \ {'short' : 'p', 'long' : 'prototypes',  'fold' : 1},
+        \ {'short' : 'g', 'long' : 'enums',       'fold' : 0},
+        \ {'short' : 'e', 'long' : 'enumerators', 'fold' : 0},
+        \ {'short' : 't', 'long' : 'types',    'fold' : 0},
+        \ {'short' : 's', 'long' : 'structs',     'fold' : 0},
+        \ {'short' : 'u', 'long' : 'subtypes',      'fold' : 0},
+        \ {'short' : 'm', 'long' : 'members',     'fold' : 0},
+        \ {'short' : 'v', 'long' : 'variables',   'fold' : 0},
+        \ {'short' : 'i', 'long' : 'identifier',   'fold' : 0},
+        \ {'short' : 'n', 'long' : 'constants',   'fold' : 0},
+        \ {'short' : 'r', 'long' : 'subprogram',   'fold' : 0},
+        \ {'short' : 'R', 'long' : 'subprogramspec',   'fold' : 0},
+    \ ]
+    let type_ada.sro        = '::'
+    "let type_ada.kind2scope = {
+    "    \ 'g' : 'enum',
+    "    \ 's' : 'struct',
+    "    \ 'u' : 'union'
+    "\ }
+    "let type_c.scope2kind = {
+    "    \ 'enum'   : 'g',
+    "    \ 'struct' : 's',
+    "    \ 'union'  : 'u'
+    "\ }
+    let s:known_types.ada = type_ada
+
     " Ant {{{3
     let type_ant = {}
     let type_ant.ctagstype = 'ant'
