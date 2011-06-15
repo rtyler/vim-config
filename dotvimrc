@@ -531,5 +531,5 @@ function! SetupEnv()
 endfunction
 
 if !&diff
-    au FileType c,cpp,ruby,python call SetupEnv()
+    au FileType ada,c,cpp,ruby,python call SetupEnv()
 endif
