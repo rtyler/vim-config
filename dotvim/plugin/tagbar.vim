@@ -989,18 +989,6 @@ function! s:CheckForExCtags()
             endfor
         endif
         return 0
-    elseif !s:CheckExCtagsVersion(ctags_output)
-        echoerr 'Tagbar: Exuberant Ctags is too old!'
-        echomsg 'You need at least version 5.5 for Tagbar to work.'
-              \ 'Please download a newer version from ctags.sourceforge.net.'
-        echomsg 'Executed command: "' . ctags_cmd . '"'
-        if !empty(ctags_output)
-            echomsg 'Command output:'
-            for line in split(ctags_output, '\n')
-                echomsg line
-            endfor
-        endif
-        return 0
     else
         let s:checked_ctags = 1
         return 1
