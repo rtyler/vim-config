@@ -518,6 +518,22 @@ let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 let g:indent_guides_enable_on_vim_startup = 1
 
+" ShowMarks plugin setup
+let g:showmarks_enable = 1
+" Only show marks that I set
+let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+hi clear ShowMarksHLl
+hi ShowMarksHLl term=bold cterm=bold ctermbg=LightRed  ctermfg=DarkRed
+" For marks A-Z
+hi clear ShowMarksHLu
+hi ShowMarksHLu term=bold cterm=bold ctermbg=LightRed ctermfg=DarkRed
+" For all other marks
+hi clear ShowMarksHLo
+hi ShowMarksHLo term=bold cterm=bold ctermbg=LightYellow ctermfg=DarkYellow
+" For multiple marks on the same line.
+hi clear ShowMarksHLm
+hi ShowMarksHLm term=bold cterm=none ctermbg=LightRed ctermfg=DarkRed
+
 
 " Some colors to make VimDiff a bit more readable
 highlight DiffAdd term=reverse cterm=bold ctermbg=green ctermfg=black
@@ -528,6 +544,7 @@ highlight DiffDelete term=reverse cterm=bold ctermbg=red ctermfg=black
 
 function! SetupEnv()
     TagbarOpen
+    ShowMarksOn
 endfunction
 
 if !&diff
