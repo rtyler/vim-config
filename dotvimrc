@@ -157,8 +157,13 @@ set gdefault
 set mousehide
 
 " Colors **********************************************************************
-syntax on
+syntax enable
 set background=dark
+let g:solarized_termcolors=256
+let g:solarized_contrast="high"
+let g:zenburn_force_dark_Background = 1
+let g:zenburn_alternate_Visual = 1
+
 if has("gui_running")
     "set guifont=Consolas:h12.00  " use this font
     set transparency=6    " Barely transparent
@@ -167,9 +172,14 @@ if has("gui_running")
     set lines=73 columns=260
 else
 "    colorscheme tango
+    colorscheme jellybeans
+"    colorscheme Tomorrow-Night
+"    colorscheme zenburn
+"    colorscheme solarized
 "    colorscheme xoria256
 "    colorscheme oceanblack256
-    colorscheme vividchalk
+"    colorscheme vividchalk
+"    colorscheme solarized
 "    colorscheme phd
 "    colorscheme sorceror
 "    colorscheme vydark
@@ -481,7 +491,7 @@ imap <Leader>tt <Esc>:execute "normal i" . strftime("%a %d %b %Y")<Esc>i
 " | Plugins                                                                  |
 " -----------------------------------------------------------------------------
 "Taglist
-map \a :TagbarOpen<CR>
+map \a :TagbarToggle<CR>
 let g:tagbar_left = 0
 
 
@@ -494,6 +504,7 @@ let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\.bak$', '\~$']
 
 
 map <silent> \f :LustyFilesystemExplorer<CR>
+map <silent> \b :LustyBufferExplorer<CR>
 
 "newrw
 let g:netrw_hide              = 1
@@ -512,27 +523,12 @@ nmap <leader>rt :%s/\s\+$//<CR>
 nmap <leader>q :qa<CR>
 
 " indent_guides plugin setup
-hi IndentGuidesEven ctermbg=darkgrey
-hi IndentGuidesOdd  ctermbg=black
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=darkgrey
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=black
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 let g:indent_guides_enable_on_vim_startup = 1
-
-" ShowMarks plugin setup
-let g:showmarks_enable = 1
-" Only show marks that I set
-let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-hi clear ShowMarksHLl
-hi ShowMarksHLl term=bold cterm=bold ctermbg=LightRed  ctermfg=DarkRed
-" For marks A-Z
-hi clear ShowMarksHLu
-hi ShowMarksHLu term=bold cterm=bold ctermbg=LightRed ctermfg=DarkRed
-" For all other marks
-hi clear ShowMarksHLo
-hi ShowMarksHLo term=bold cterm=bold ctermbg=LightYellow ctermfg=DarkYellow
-" For multiple marks on the same line.
-hi clear ShowMarksHLm
-hi ShowMarksHLm term=bold cterm=none ctermbg=LightRed ctermfg=DarkRed
 
 
 " Some colors to make VimDiff a bit more readable
@@ -542,11 +538,21 @@ highlight DiffText term=reverse cterm=bold ctermbg=gray ctermfg=black
 highlight DiffDelete term=reverse cterm=bold ctermbg=red ctermfg=black
 
 
-function! SetupEnv()
-    TagbarOpen
-    ShowMarksOn
-endfunction
+set colorcolumn=81
+hi ColorColumn ctermbg=59 ctermfg=white
+
+"function! SetupEnv()
+"    TagbarOpen
+"endfunction
+"
+"if !&diff
+"    au FileType ada,c,cpp,ruby,python call SetupEnv()
+"endif
 
 if !&diff
-    au FileType ada,c,cpp,ruby,python call SetupEnv()
+    set foldmethod=syntax
+    "set foldminlines=3
+    set foldlevel=2
+    set completeopt=menu,menuone,longest
+    set complete-=i
 endif
