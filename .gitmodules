@@ -16,3 +16,9 @@
 [submodule "dotvim/bundle/vim-git"]
 	path = dotvim/bundle/vim-git
 	url = git://github.com/tpope/vim-git.git
+[submodule "dotvim/bundle/vim-ruby"]
+	path = dotvim/bundle/vim-ruby
+	url = https://github.com/vim-ruby/vim-ruby.git
+[submodule "dotvim/bundle/vim-indent-guides"]
+	path = dotvim/bundle/vim-indent-guides
+	url = git://github.com/nathanaelkane/vim-indent-guides.git
