@@ -1,0 +1,3 @@
+[submodule "dotvim/bundle/ruby-refactoring"]
+	path = dotvim/bundle/ruby-refactoring
+	url = git://github.com/ecomba/vim-ruby-refactoring.git
