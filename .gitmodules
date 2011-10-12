@@ -1,3 +1,12 @@
 [submodule "dotvim/bundle/ruby-refactoring"]
 	path = dotvim/bundle/ruby-refactoring
 	url = git://github.com/ecomba/vim-ruby-refactoring.git
+[submodule "dotvim/bundle/snipmate"]
+	path = dotvim/bundle/snipmate
+	url = git://github.com/msanders/snipmate.vim.git
+[submodule "dotvim/bundle/vim-markdown"]
+	path = dotvim/bundle/vim-markdown
+	url = git://github.com/tpope/vim-markdown.git
+[submodule "dotvim/bundle/vim-cucumber"]
+	path = dotvim/bundle/vim-cucumber
+	url = git://github.com/tpope/vim-cucumber.git
