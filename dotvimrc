@@ -11,6 +11,8 @@ set nocompatible
 " first clear any existing autocommands:
 autocmd!
 
+call pathogen#infect()
+
 " Restore the screen when we're exiting and set correct terminal
 behave xterm
 if &term == "xterm"
