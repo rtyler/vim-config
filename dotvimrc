@@ -96,6 +96,13 @@ function! Tabstyle_spaces()
   set expandtab
 endfunction
 
+function! Tabstyle_ada()
+  " Use 3 spaces and what not
+  set shiftwidth=3
+  set softtabstop=3
+  set expandtab
+endfunction
+
 " Tabs should be converted to a group of 4 spaces.
 " indent length with < >
 set shiftwidth=4
@@ -160,9 +167,9 @@ set mousehide
 
 " Colors **********************************************************************
 syntax enable
-set background=dark
+set bg=dark
 let g:solarized_termcolors=256
-let g:solarized_contrast="high"
+let g:solarized_contrast="normal"
 let g:zenburn_force_dark_Background = 1
 let g:zenburn_alternate_Visual = 1
 
@@ -174,6 +181,7 @@ if has("gui_running")
     set lines=73 columns=260
 else
 "    colorscheme tango
+"    colorscheme darkblue
     colorscheme jellybeans
 "    colorscheme Tomorrow-Night
 "    colorscheme zenburn
@@ -196,6 +204,7 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
+autocmd FileType groovy set autoindent
 " bind ctrl+space for omnicompletion
 inoremap <Nul> <C-x><C-o>
 
@@ -249,12 +258,15 @@ au FileType c,cpp,slang        set cindent
 " characters, if starting a new line in the middle of a comment automatically
 " insert the comment leader characters:
 au FileType c set formatoptions+=ro
+au FileType c call Tabstyle_tabs()
 
 " for Perl programming, have things in braces indenting themselves:
 au FileType perl set smartindent
 
 au FileType python set formatoptions-=t
 au FileType ruby call Tabstyle_spaces()
+au FIleType ada call Tabstyle_ada()
+au FileType python call Tabstyle_spaces()
 
 " for CSS, also have things in braces indented:
 au FileType css set smartindent
@@ -494,7 +506,7 @@ imap <Leader>tt <Esc>:execute "normal i" . strftime("%a %d %b %Y")<Esc>i
 " -----------------------------------------------------------------------------
 "Taglist
 map \a :TagbarToggle<CR>
-let g:tagbar_left = 0
+let g:tagbar_left = 1
 
 
 "NERDTree
@@ -518,6 +530,7 @@ let g:netrw_special_syntax    = 1
 highlight RedundantWhitespace ctermbg=red guibg=red
 match RedundantWhitespace /\s\+$\| \+\ze\t/
 set lcs=tab:»»,trail:·,eol:·
+"set lcs=tab:\.\.,trail:-,eol:$
 set list
 
 " Find and remove all trailing whitespace
@@ -543,13 +556,13 @@ highlight DiffDelete term=reverse cterm=bold ctermbg=red ctermfg=black
 set colorcolumn=81
 hi ColorColumn ctermbg=59 ctermfg=white
 
-"function! SetupEnv()
-"    TagbarOpen
-"endfunction
-"
-"if !&diff
-"    au FileType ada,c,cpp,ruby,python call SetupEnv()
-"endif
+function! SetupEnv()
+    "TagbarOpen
+endfunction
+
+if !&diff
+    au FileType ada,c,cpp,ruby,python call SetupEnv()
+endif
 
 if !&diff
     set foldmethod=syntax
@@ -559,3 +572,21 @@ if !&diff
     set complete-=i
 endif
 
+
+function! PuppetConfiguration()
+    set tabstop=2
+    set shiftwidth=2
+    set autoindent
+    set expandtab
+endfunction
+
+au FileType puppet call PuppetConfiguration()
+
+" Use the old regex engine which doesn't slow to a crawl on Ruby syntax
+" highlighting
+set re=1
+
+
+set bg=dark
+"colorscheme solarized
+noremap <Leader>s :Ack <cword><cr>

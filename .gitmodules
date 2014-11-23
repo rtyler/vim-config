@@ -22,3 +22,21 @@
 [submodule "dotvim/bundle/vim-indent-guides"]
 	path = dotvim/bundle/vim-indent-guides
 	url = git://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "dotvim/bundle/ack.vim"]
+	path = dotvim/bundle/ack.vim
+	url = git://github.com/mileszs/ack.vim.git
+[submodule "dotvim/bundle/vim-colors-solarized"]
+	path = dotvim/bundle/vim-colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "dotvim/bundle/vim-puppet"]
+	path = dotvim/bundle/vim-puppet
+	url = git://github.com/rodjek/vim-puppet.git
+[submodule "dotvim/bundle/vim-groovy"]
+	path = dotvim/bundle/vim-groovy
+	url = git://github.com/vim-scripts/groovy.vim.git
+[submodule "dotvim/bundle/vim-fugitive"]
+	path = dotvim/bundle/vim-fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "dotvim/bundle/vim-gradle"]
+	path = dotvim/bundle/vim-gradle
+	url = git://github.com/tfnico/vim-gradle.git
